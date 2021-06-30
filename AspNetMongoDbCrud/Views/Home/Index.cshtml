@@ -1,0 +1,45 @@
+﻿@model List<AspNetMongoDbCrud.Models.Customers>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>List of Customers</h1>
+
+<h2>@TempData["Message"]</h2>
+
+<a asp-controller="Home" asp-action="Create">
+    Add New Customer
+</a>
+<br />
+<table border="1" cellpadding="10">
+    <thead>
+        <tr>
+            <th>CustomerId</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Point</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CustomerId</td>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Phone</td>
+            <td>@item.Email</td>
+            <td>@item.Point</td>
+            <td>
+                <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+            </td>
+            <td>
+                <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+
+        </tr>
+    }
+</table>
+
+<script src="~/script/customer.js"></script>
