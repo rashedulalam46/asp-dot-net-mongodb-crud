@@ -27,7 +27,6 @@ namespace AspNetMongoDbCrud.Controllers
 
         public IActionResult Create()
         {
-
             return View();
         }
 
