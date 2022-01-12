@@ -73,7 +73,6 @@ namespace AspNetMongoDbCrud.Controllers
             return RedirectToAction("Index");
         }
 
-
         public IActionResult Delete(string id)
         {
             ObjectId OdId = new ObjectId(id);
